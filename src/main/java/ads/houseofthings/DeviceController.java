@@ -36,6 +36,10 @@ public class DeviceController implements Initializable {
     private Label labelDeviceMode;
     @FXML
     private Label labelDeviceTarget;
+    @FXML
+    private Label labelDeviceReadingType;
+    @FXML
+    private Label labelDeviceReadingValue;
 
     private List<Device> listDevices;
     private ObservableList<Device> observableListDevices;
@@ -68,12 +72,27 @@ public class DeviceController implements Initializable {
             labelDeviceName.setText(device.getName());
             labelDeviceType.setText(device.getType());
             labelDeviceMode.setText(device.getMode());
-            labelDeviceTarget.setText(String.valueOf(device.getTargetTemperature()));
+            if(device.getTargetTemperature() != null) {
+                labelDeviceTarget.setText(String.valueOf(device.getTargetTemperature()));
+                buttonChange.setDisable(false);
+            } else {
+                labelDeviceTarget.setText("");
+                buttonChange.setDisable(true);
+            }
+            try {
+                labelDeviceReadingType.setText(device.getReading().getType());
+                labelDeviceReadingValue.setText(String.valueOf(device.getReading().getValue()));
+            } catch (NullPointerException e){
+                labelDeviceReadingType.setText("");
+                labelDeviceReadingValue.setText("");
+            }
         } else {
             labelDeviceName.setText("");
             labelDeviceType.setText("");
             labelDeviceMode.setText("");
             labelDeviceTarget.setText("");
+            labelDeviceReadingType.setText("");
+            labelDeviceReadingValue.setText("");
         }
     }
 
@@ -88,7 +107,7 @@ public class DeviceController implements Initializable {
         if (device != null){
             boolean buttonConfirmClicked = showDeviceDialog(device);
             if (buttonConfirmClicked){
-                //deviceDAO.updateDevice(device);
+                deviceDAO.updateDevice(device);
                 getDevices();;
             }
         }

@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="376.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="ads.houseofthings.DeviceController">
+<AnchorPane id="AnchorPane" prefHeight="376.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ads.houseofthings.DeviceController">
 <children>
     <SplitPane dividerPositions="0.3795986622073579" layoutX="109.0" layoutY="56.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -32,24 +31,30 @@
                     </Label>
                     <GridPane layoutX="22.0" layoutY="58.0" prefHeight="120.0" prefWidth="323.0">
                         <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="164.0" minWidth="10.0" prefWidth="77.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="262.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="164.0" minWidth="10.0" prefWidth="106.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="217.0" />
                         </columnConstraints>
                         <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints />
+                        <RowConstraints />
                         </rowConstraints>
                         <children>
                             <Label text="Name" />
                             <Label text="Type" GridPane.rowIndex="1" />
-                            <Label text="Mode" GridPane.rowIndex="2" />
-                            <Label text="Target" GridPane.rowIndex="3" />
+                            <Label fx:id="labelMode" text="Mode" GridPane.rowIndex="2" />
+                            <Label fx:id="labelTarget" text="Target" GridPane.rowIndex="3" />
+                            <Label fx:id="labelReadingType" text="Reading Type" GridPane.rowIndex="4" />
+                            <Label fx:id="labelReadingValue" text="Reading Value" GridPane.rowIndex="5" />
                             <Label fx:id="labelDeviceName" GridPane.columnIndex="1" />
                             <Label fx:id="labelDeviceType" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                             <Label fx:id="labelDeviceMode" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                             <Label fx:id="labelDeviceTarget" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                            <Label fx:id="labelDeviceReadingType" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                            <Label fx:id="labelDeviceReadingValue" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         </children>
                     </GridPane>
                     <Group layoutX="6.0" layoutY="-25.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />

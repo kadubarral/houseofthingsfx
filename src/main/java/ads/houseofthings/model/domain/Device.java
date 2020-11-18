@@ -8,17 +8,21 @@ public class Device implements Serializable {
     public String type;
     public String status;
     public String mode;
+    public DeviceReading reading;
     public Number targetTemperature;
+    public String endpoint;
 
     public Device() {
     }
 
-    public Device(String name, String status, String type, String mode, Number targetTemperature) {
+    public Device(String name, String status, String type, String mode, DeviceReading reading, Number targetTemperature, String endpoint) {
         this.name = name;
         this.status = status;
         this.type = type;
         this.mode = mode;
+        this.reading = reading;
         this.targetTemperature = targetTemperature;
+        this.endpoint = endpoint;
     }
 
     public String getName() {
@@ -27,6 +31,14 @@ public class Device implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEndpoint() {
+        return endpoint;
+    }
+
+    public void setEndpoint(String endpoint) {
+        this.endpoint = endpoint;
     }
 
     public String getStatus() {
@@ -59,5 +71,13 @@ public class Device implements Serializable {
 
     public void setMode(String mode) {
         this.mode = mode;
+    }
+
+    public DeviceReading getReading() {
+        return reading;
+    }
+
+    public void setReading(DeviceReading reading) {
+        this.reading = reading;
     }
 }
